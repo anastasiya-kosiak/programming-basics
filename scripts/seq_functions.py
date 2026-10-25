@@ -48,10 +48,20 @@ def test(seq):
     print("Usable:", is_usable(seq))
     print("First ATG at:", first_atg(seq))
 
+
+def count_bases(seq):
+    counts = {"A": 0, "T": 0, "G": 0, "C": 0, "N": 0}
+    for base in seq:
+        counts[base] = counts[base] + 1
+    return counts
+
+
 seq1 = "ATGCGCGATATCGCGTAGCTAGCTAGGCATGC"
 seq2 = "TTAGGCATGCC"
 seq3 = "GATTACANNNGATTACAGATTACAGATTACAGATTACA"
+seq4 = "ATGCGCATG";
 
 test(seq1)
 test(seq2)
 test(seq3)
+print(count_bases(seq4))
